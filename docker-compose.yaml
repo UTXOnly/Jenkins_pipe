@@ -3,7 +3,7 @@ services:
   test-server:
     image: nginx:latest
     ports:
-      - 803:80
+      - 8003:80
     volumes:
       - ./html:/usr/share/nginx/html
 
