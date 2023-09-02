@@ -19,7 +19,7 @@ pipeline {
                     sleep 10
 
                     // Run a test command inside the container
-                    sh "curl http://localhost:803"
+                    sh "curl http://localhost:8003"
                 }
             }
         }
