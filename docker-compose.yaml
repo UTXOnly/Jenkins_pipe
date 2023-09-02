@@ -1,11 +1,9 @@
 version: '3'
 services:
-  jenkins:
-    image: jenkins/jenkins:lts
+  test-server:
+    image: nginx:latest
     ports:
-      - 8080:8080
+      - 803:80
     volumes:
-      - jenkins_data:/var/jenkins_home
-    restart: always
-volumes:
-  jenkins_data:
+      - ./html:/usr/share/nginx/html
+

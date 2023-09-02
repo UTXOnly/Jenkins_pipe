@@ -2,20 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-                script {
-                    // Define the Docker image name
-                    def imageName = 'hello-world'
-
-                    // Build the Docker image using Docker Compose
-                    sh "docker-compose build --pull"
-
-                    // Tag the Docker image with a unique version
-                    sh "docker tag ${imageName} ${imageName}:${env.BUILD_NUMBER}"
-                }
-            }
-        }
 
         stage('Run') {
             steps {
@@ -33,7 +19,7 @@ pipeline {
                     sleep 10
 
                     // Run a test command inside the container
-                    sh "docker-compose exec ${imageName} echo 'Hello, World!'"
+                    sh "curl http://localhost:803"
                 }
             }
         }
